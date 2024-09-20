@@ -1,11 +1,20 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System.Runtime.CompilerServices;
 
-Console.WriteLine("Hello, World!");
 
-string hello1 = Console.ReadLine();
 
-Console.WriteLine(hello1); 
-/
-int  zahl = Int32.Parse(hello1);
-Console.WriteLine(zahl + 100);
+bool isInput = true;
+
+Console.WriteLine("Schreibe etwas rein!");
+
+
+while (isInput)
+{
+    string input = Console.ReadLine();
+    Console.WriteLine(input);
+    if(input == "Beenden")
+    {
+        isInput = false;
+    }
+}
+
