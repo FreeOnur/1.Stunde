@@ -3,9 +3,9 @@ using System.Runtime.CompilerServices;
 
 Console.WriteLine("Hello, World!");
 
-string hello = Console.ReadLine();
+string hello1 = Console.ReadLine();
 
-Console.WriteLine(hello); 
+Console.WriteLine(hello1); 
 
 int  zahl = Int32.Parse(hello);
 Console.WriteLine(zahl + 100);
