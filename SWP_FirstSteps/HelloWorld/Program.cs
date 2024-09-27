@@ -1,11 +1,30 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System.Runtime.CompilerServices;
+using System.Text.RegularExpressions;
 
-Console.WriteLine("Hello, World!");
 
-string hello1 = Console.ReadLine();
+// Programmieraufgabe 1
+bool isInput = true;
 
-Console.WriteLine(hello1); 
-//
-int  zahl = Int32.Parse(hello1);
-Console.WriteLine(zahl + 100);
+Console.WriteLine("Schreibe etwas rein!");
+
+
+while (isInput)
+{
+    string input = Console.ReadLine();
+    if (int.TryParse(input, out int output))
+    {
+        int input2 = int.Parse(input);
+        Console.WriteLine("Deine Zahl wurde um 1 vergrößert: ");
+        Console.Write(input2 +1);
+    }
+
+
+    if (input == "Beenden")
+    {
+        isInput = false;
+    }
+
+}
+
+
