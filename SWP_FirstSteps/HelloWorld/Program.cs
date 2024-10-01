@@ -1,30 +1,66 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using System.Runtime.CompilerServices;
-using System.Text.RegularExpressions;
 
+Console.WriteLine("Schreibe einen Datentyp welcher konvertiert werden soll");
 
-// Programmieraufgabe 1
-bool isInput = true;
+string userInput = Console.ReadLine();
+string output = "";
 
-Console.WriteLine("Schreibe etwas rein!");
-
-
-while (isInput)
+try
 {
-    string input = Console.ReadLine();
-    if (int.TryParse(input, out int output))
+    int intInput = int.Parse(userInput);
+    output = "Das ist ein int: " + intInput;
+    
+}
+catch
+{
+    try
     {
-        int input2 = int.Parse(input);
-        Console.WriteLine("Deine Zahl wurde um 1 vergrößert: ");
-        Console.Write(input2 +1);
+       
+        
+        bool boolOut = false;
+        if (userInput.ToLower() == "true" || userInput.ToLower() == "wahr")
+        {
+            boolOut = true;
+        }
+        else if (userInput.ToLower() == "false" || userInput.ToLower() == "falsch")
+        {
+            boolOut = false;
+            
+        }
+
+        output = "Das ist ein bool: " + boolOut;
+
     }
-
-
-    if (input == "Beenden")
+    catch 
     {
-        isInput = false;
-    }
+        try
+        {
+            
+            double doubleInput = double.Parse(userInput);
+                output = "Das ist ein double: " + doubleInput;
+            // Da ich hier double verwende und unten date muss ich bei double in die Konsole ein "," statt einem "." hinschreiben
+        }
+        catch
+        {
+            try
+            {
+                string[] splitInput = userInput.Split('.');
+                if(splitInput.Length >= 3)
+                {
+                    DateTime dateInput = DateTime.Parse(userInput);
+                    output = "Das ist ein Datum: " + dateInput;
+                }
+                
 
+            }
+            catch
+            {
+                Console.WriteLine("Das ist kein Int, kein Datum, kein Double");
+            }
+
+        }
+    
+    }
 }
 
-
+Console.WriteLine(output);
