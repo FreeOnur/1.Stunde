@@ -76,7 +76,6 @@ class MatheOperation
         {
             int division = Zahl1 / ganzZahl;
             Console.WriteLine("Ihre Zahl lautet: " + division);
-
         }
     }
     public void fakultaet(int Zahl1)
@@ -87,7 +86,6 @@ class MatheOperation
             ergebnis *= i;
         }
         Console.WriteLine("Ihre Zahl lautet: " + ergebnis);
-
     }
     string AbfrageZahl2(string operation)
     {
