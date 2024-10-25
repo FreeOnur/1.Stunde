@@ -1,95 +1,105 @@
-﻿Console.WriteLine("Wählen sie eine Rechenoperation aus");
-Console.WriteLine("1: Wurzel");
-Console.WriteLine("2: Potenzieren");
-Console.WriteLine("3: Fakultät");
-Console.WriteLine("4: BMI");
-Console.WriteLine("5: Quadratische Flächen");
-Console.WriteLine("6: Volumen");
+﻿using System.Numerics;
 
+Console.WriteLine("Welche Operation willst du benutzen?");
+Console.WriteLine("1.Multiplizieren");
+Console.WriteLine("2.Dividieren");
+Console.WriteLine("3.Addieren");
+Console.WriteLine("4.Potenzieren");
+Console.WriteLine("5.Wurzelziehen");
+Console.WriteLine("6.Fakultät");
+Console.WriteLine("7.Invertieren");
 
-int chooseOperator = int.Parse(Console.ReadLine()); 
-MathOperation operation = new MathOperation();
-
-switch (chooseOperator)
+try
 {
-    case 1:
-
-        Console.WriteLine("Gebe ein von was du die Wurzel ziehen willst");
-        double wurzelInput = Convert.ToDouble(Console.ReadLine());
-        double wurzelErgebnis = Math.Sqrt(wurzelInput);
-        Console.WriteLine("Das Ergebnis ist: " + wurzelErgebnis);
-        
-        break;
-
-    case 2:
-        Console.WriteLine("Gebe ein von was du Potenzieren willst!");
-        double basenInput = Convert.ToDouble(Console.ReadLine());
-        Console.WriteLine("Gebe deine Exponente ein");
-        double potenzInput = Convert.ToDouble(Console.ReadLine());
-        double potenzErgebnis = Math.Pow(basenInput, potenzInput);
-        Console.WriteLine("Das Ergebnis ist: " + potenzErgebnis);
-
-        break;
-    case 3:
-        Console.WriteLine("Schreibe die Zahl ein von der du die Fakultät herausfinden willst");
-        int fakultätInput = int.Parse(Console.ReadLine());
-        long fakultätErgebnis = operation.Fakultät(fakultätInput);
-        Console.WriteLine("Das Ergebnis ist: " + fakultätErgebnis);
-        break;
-    case 4:
-        
-        Console.WriteLine("Gebe dein Gewicht ein: ");
-        double gewichtInput = Convert.ToDouble(Console.ReadLine());
-        Console.WriteLine("Gebe deine Größe ein: ");
-        double größeInput = Convert.ToDouble(Console.ReadLine());
-        double BMI = operation.BMI(gewichtInput, größeInput);
-        
-        if(BMI < 18.5)
-        {
-            Console.WriteLine("Du hast einen BMI von " + BMI + " und bist untergewichtigt");
-        } else if(BMI <= 18.5 || BMI <= 24.9)
-        {
-            Console.WriteLine("Du hast einen BMI von " + BMI + " und bist im Normalgewicht");
-        } else if (BMI >25 || BMI < 29.9)
-        {
-            Console.WriteLine("Du hast einen BMI von " + BMI + " und bist im Übergewicht");
-        } else if(BMI> 30)
-        {
-            Console.WriteLine("Du hast einen BMI von " + BMI + " und bist im Fettleibigkeit");
-        }
-        break;
-    case 5:
-        Console.WriteLine("Gebe die Seite A ein: ");
-        double seiteA = Convert.ToDouble(Console.ReadLine());
-        Console.WriteLine("Gebe die Seite B ein: ");
-        double seiteB = Convert.ToDouble(Console.ReadLine());
-        double flächenErgebnis = operation.Quadrat(seiteA, seiteB);
-        Console.WriteLine("Die Fläche der Form ist: " + flächenErgebnis + "m2");
-        break;
-
+    int input = int.Parse(Console.ReadLine());
+    MathOperations ops = new MathOperations();
+    switch (input)
+    {
+        case 1:
+            ops.multiply();
+            break;
+        case 2:
+            Console.WriteLine("Gib deinen Dividend ein: ");
+            int dividend = int.Parse(Console.ReadLine());
+            Console.WriteLine("Gib deinen Divisor ein: ");
+            int divisor = int.Parse(Console.ReadLine());
+            Console.WriteLine("Dein Ergebnis lautet: " + ops.divide(dividend, divisor));
+            break;
+        case 3:
+            Console.WriteLine("Gib deine 1.Zahl ein: ");
+            int zahl1 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Gib deine 2.Zahl ein: ");
+            int zahl2 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Dein Ergebnis lautet: " + ops.addition(zahl1, zahl2));
+            break;
+        case 4:
+            Console.WriteLine("Gib deine Hochzahl ein: ");
+            int potenz = int.Parse(Console.ReadLine());
+            Console.WriteLine("Gib deine Base ein: ");
+            int basis = int.Parse(Console.ReadLine());
+            Console.WriteLine("Dein Ergebnis lautet: " + ops.potenzieren(potenz, basis));
+            break;
+        case 5:
+            Console.WriteLine("Gib deine Zahl ein: ");
+            int wurzelZahl = int.Parse(Console.ReadLine());
+            Console.WriteLine("Dein Ergebnis lautet: " + Math.Sqrt(wurzelZahl));
+            break;
+        case 6:
+            Console.WriteLine("Gib deine Zahl um zu fakultieren ein: ");
+            int fakultaetZahl = int.Parse(Console.ReadLine());
+            Console.WriteLine("Dein Ergebnis lautet: " + ops.fakultaet(fakultaetZahl));
+            break;
+        case 7:
+            Console.WriteLine("Gib deine Zahl ein: ");
+            int invertZahl = int.Parse(Console.ReadLine());
+            Console.WriteLine("Dein Ergebnis lautet: " + ops.invertieren(invertZahl));
+            break;
+    }
+} catch
+{
+    Console.WriteLine("Ungültige Zahl!");
 }
-
-
-class MathOperation
+class MathOperations
 {
-    public long Fakultät(int Zahl)
+    public void multiply()
     {
-        long fakultätErgebnis = 1;
-        for (int i = 1; i <= Zahl; i++)
+        Console.WriteLine("Gib deine 1. Zahl ein: ");
+        int inputZahl1 = int.Parse(Console.ReadLine());
+        Console.WriteLine("Gib deine 2.Zahl ein: ");
+        int inputZahl2 = int.Parse(Console.ReadLine());
+        int ergebnis = inputZahl1 * inputZahl2;
+        Console.WriteLine("Das Ergebnis lautet: " + ergebnis);
+        
+    }
+    public long fakultaet(int zahl)
+    {
+        long ergebnis = 1;
+        for (int i = 1; i <= zahl; i++)
         {
-            fakultätErgebnis *= i;
+            ergebnis *= i;
         }
-        return fakultätErgebnis;
+        return ergebnis;
     }
-    public double BMI(double gewicht, double größe)
+    public int divide(int x, int y)
     {
-        double BMI = gewicht/(größe * größe);
-        return BMI;       
+        int ergebnis = x / y;
+        return ergebnis;
     }
-
-    public double Quadrat(double seiteA, double seiteB)
+    public int addition(int x, int y)
     {
-        double flächeQuadrat = seiteA * seiteB;
-        return flächeQuadrat;
+        return x + y;
     }
+    public int potenzieren(int amount, int zahl)
+    {
+        int ergebnis = 1;
+        for (int i = 0; i < amount; i++) 
+        { 
+            ergebnis *= zahl;
+        }
+        return ergebnis;
+    }
+    public double invertieren(int zahl)
+    {
+        return 1/zahl;
+    }   
 }
