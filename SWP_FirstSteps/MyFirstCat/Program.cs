@@ -1,8 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using MyFirstCat;
 
-bool besuch = true; 
-
+bool besuch = true;
 Tierheim myTier = new Tierheim();
 void tierConsole()
 {
@@ -39,7 +38,6 @@ void tierConsole()
                 {
                     Console.WriteLine("Dies ist das falsche Format");
                 }
-
             } else if(addCatRead == "no")
             {
                 besuch = false;
@@ -49,7 +47,6 @@ void tierConsole()
         {
             Console.WriteLine("Das ist keine gültige Eingabe!");
         }
-
     }
 }
 tierConsole();

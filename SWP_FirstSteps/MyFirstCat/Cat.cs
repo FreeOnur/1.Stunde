@@ -31,17 +31,12 @@ namespace MyFirstCat
                 name = value;
             }
         }
-            
-
         public int Age { get { return (DateTime.Now.Year - _BirthDate.Year); } }
         public Cat(DateTime birthdate, string color = "Nicht Verfügbar", string name1 = "Nicht Verfügbar")
         {
             _BirthDate = birthdate;
             _Color = color;
             name = name1;
-
         }
-        
-
     }
 }
