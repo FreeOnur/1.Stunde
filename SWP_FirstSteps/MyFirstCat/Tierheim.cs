@@ -7,21 +7,19 @@ namespace MyFirstCat
 {
     class Tierheim
     {
-        private List<Cat> tiere = new List<Cat>();
+        public List<Cat> tiere = new List<Cat>();
 
         public void AddAnimal(Cat cat)
         {
             tiere.Add(cat);
-            Console.WriteLine($"\nEs wurde die neue Katze {cat.Name} hinzugefügt!\n");
+            Console.WriteLine($"\nEs wurde die neue Katze {cat.setName} hinzugefügt!\n");
         }
-
         public void ShowAnimals()
         {
             int index = 1;
             foreach (var cat in tiere)
             {
-                Console.WriteLine($"\nKatze {index}:{cat.Name}|Farbe:{cat.Color}|Alter:{cat.Age}\n");
-                index++;
+                Console.WriteLine(cat.ToString());
             }
         }
     }

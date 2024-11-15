@@ -21,6 +21,8 @@ void tierConsole()
                     string catColor = Console.ReadLine();
                     Console.WriteLine("Wie heißt eure Katze?");
                     string catName = Console.ReadLine();
+                    var cat = new Cat(dtBirth,catColor,catName);
+                    cat.setColor = "";
                     myTier.AddAnimal(new Cat(dtBirth, catColor, catName));
                     Console.WriteLine("Hier ist die Liste mit allen Katzen:");
                     myTier.ShowAnimals();
