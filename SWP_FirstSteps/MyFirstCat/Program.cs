@@ -3,26 +3,25 @@ using MyFirstCat;
 
 bool besuch = true;
 Tierheim myTier = new Tierheim();
+
 void tierConsole()
 {
     while (besuch)
     {
-        Console.WriteLine("Willst du eine Katze hinzufügen (yes/no)");
+        Console.WriteLine("Willst du ein Tier hinzufügen (yes/no)");
         string addCatRead = Console.ReadLine();
         if (addCatRead == "yes" || addCatRead == "no")
         {
             if (addCatRead == "yes")
             {
-                Console.WriteLine("Wann ist die Katze geboren? ");
+                Console.WriteLine("Wann ist das Tier geboren? ");
                 string catBirthDate = Console.ReadLine();
                 if (DateTime.TryParse(catBirthDate, out DateTime dtBirth))
                 {
-                    Console.WriteLine("Welche Farbe hat die Katze?");
+                    Console.WriteLine("Welche Farbe hat das Tier?");
                     string catColor = Console.ReadLine();
-                    Console.WriteLine("Wie heißt eure Katze?");
+                    Console.WriteLine("Wie heißt das Tier?");
                     string catName = Console.ReadLine();
-                    var cat = new Cat(dtBirth,catColor,catName);
-                    cat.setColor = "";
                     myTier.AddAnimal(new Cat(dtBirth, catColor, catName));
                     Console.WriteLine("Hier ist die Liste mit allen Katzen:");
                     myTier.ShowAnimals();
@@ -35,6 +34,7 @@ void tierConsole()
                     {
                         besuch = false;
                     }
+                    
                 }
                 else
                 {
