@@ -8,9 +8,11 @@ namespace MyFirstCat
 {
     class Animal : Lebewesen
     {
-        public Animal(string name, DateTime birthDate, string color) : base(birthDate, color, name)
+        public string Name { get; set; }
+        public Animal(string name, DateTime birthDate) : base(birthDate)
         {
             
+            Name = name;
         }
         public override string ToString()
         {

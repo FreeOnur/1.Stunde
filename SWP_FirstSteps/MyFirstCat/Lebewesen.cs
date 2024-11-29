@@ -8,16 +8,12 @@ namespace MyFirstCat
 {
     class Lebewesen
     {
-        public string Color { get; set; }
-        public string Name { get; set; }
-        public DateTime BirthDate { get; set; }
-        public int Age { get { return (DateTime.Now.Year - BirthDate.Year); } }
+        public DateTime _BirthDate { get; set; }
 
-        public Lebewesen(DateTime birthDate, string color, string name)
+        public Lebewesen(DateTime birthDate)
         {
-            Color = color;
-            BirthDate = birthDate;
-            Name = name;
+            
+            _BirthDate = birthDate;
         }
     }
 }
