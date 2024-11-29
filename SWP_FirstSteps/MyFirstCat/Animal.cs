@@ -6,14 +6,15 @@ using System.Threading.Tasks;
 
 namespace MyFirstCat
 {
-    class Animal
+    class Animal : Lebewesen
     {
         public string Name { get; set; }
-        public Animal(string name)
+        public Animal(string name, DateTime birthDate) : base(birthDate)
         {
+            
             Name = name;
         }
-        public string ToString()
+        public override string ToString()
         {
             return Name;
         }
