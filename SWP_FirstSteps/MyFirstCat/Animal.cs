@@ -13,7 +13,7 @@ namespace MyFirstCat
         {
             Name = name;
         }
-        public override string ToString()
+        public string ToString()
         {
             return Name;
         }
