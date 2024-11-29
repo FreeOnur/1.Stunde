@@ -10,15 +10,16 @@ namespace MyFirstCat
 {
     class Cat : Animal
     {
-        private DateTime _BirthDate;
+        
         public string Color  { get; set; }
         public int Age { get { return (DateTime.Now.Year - _BirthDate.Year); } }
-        public Cat(DateTime birthDate, string color = "Nicht Verfügbar", string name = "nicht Verfügbar") : base(name)
+
+        public Cat(DateTime birthDate,string color = "Nicht Verfügbar", string name = "nicht Verfügbar") : base(name,birthDate)
         {
-            _BirthDate = birthDate;
+            
             Color = color;          
         }
-        public string ToString()
+        public override string ToString()
         {
             return $"Name: {Name}, Farbe: {Color}, Alter: {Age}";
         }
