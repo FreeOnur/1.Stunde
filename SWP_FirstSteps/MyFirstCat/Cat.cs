@@ -5,37 +5,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Runtime.InteropServices.JavaScript.JSType;
-
+// eine eltern klasse animal die eine interne variable name hat die klasse leitet von dem tier ab und erbt somit das Attribut Name
 namespace MyFirstCat
 {
-    class Cat
+    class Cat : Animal
     {
-        private string? _Color;
         private DateTime _BirthDate;
-        public string setColor
+        public string Color  { get; set; }
+        public int Age { get { return (DateTime.Now.Year - _BirthDate.Year); } }
+        public Cat(DateTime birthDate, string color = "Nicht Verfügbar", string name = "nicht Verfügbar") : base(name)
         {
-            get
-            {
-                return _Color;
-            }
-            
-            set
-            {
-                if (_Color == value) return;
-                _Color = value;
-            }
+            _BirthDate = birthDate;
+            Color = color;          
         }
-        public string setName { get; set; }
-        public int setAge { get { return (DateTime.Now.Year - _BirthDate.Year); } }
-        public Cat(DateTime birthdate, string color = "Nicht Verfügbar", string name1 = "Nicht Verfügbar")
+        public string ToString()
         {
-            _BirthDate = birthdate;
-            _Color = color;
-            setName = name1;
-        }
-        public override string ToString()
-        {
-            return $"Name: {setName}, Farbe: {setColor}, Alter: {setAge}";
+            return $"Name: {Name}, Farbe: {Color}, Alter: {Age}";
         }
     }
 }

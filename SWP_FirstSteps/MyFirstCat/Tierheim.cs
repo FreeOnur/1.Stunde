@@ -12,14 +12,14 @@ namespace MyFirstCat
         public void AddAnimal(Cat cat)
         {
             tiere.Add(cat);
-            Console.WriteLine($"\nEs wurde die neue Katze {cat.setName} hinzugefügt!\n");
+            Console.WriteLine($"\nEs wurde die neue Katze {cat} hinzugefügt!\n");
         }
         public void ShowAnimals()
         {
             int index = 1;
             foreach (var cat in tiere)
             {
-                Console.WriteLine(cat.ToString());
+                Console.WriteLine(cat);
             }
         }
     }
