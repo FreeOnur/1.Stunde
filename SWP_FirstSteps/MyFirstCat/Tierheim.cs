@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 namespace MyFirstCat
 {
-    class Tierheim
+    public class Tierheim
     {
         public List<Animal> tiere = new List<Animal>();
         public void AddAnimal(Animal animal)
@@ -16,9 +16,9 @@ namespace MyFirstCat
         public void ShowAnimals()
         {
             int index = 1;
-            foreach (var cat in tiere)
+            foreach (var tier in tiere)
             {
-                Console.WriteLine(cat);
+                Console.WriteLine(tier);
             }
         }
         public int NumberOfCats
@@ -30,5 +30,6 @@ namespace MyFirstCat
         {
             get { return tiere.Select(a => a.GetType() == typeof(Dog)).Count(); }
         }
+        
     }
 }

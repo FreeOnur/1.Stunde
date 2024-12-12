@@ -104,3 +104,4 @@ void TierAbfrage()
 {
     Console.WriteLine("Was für ein Tier ist es? \n 1.Cat \n 2.Dog");
 }
+
