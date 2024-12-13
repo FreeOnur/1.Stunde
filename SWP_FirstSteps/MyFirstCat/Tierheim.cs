@@ -23,12 +23,12 @@ namespace MyFirstCat
         }
         public int NumberOfCats
         {
-            get { return tiere.Select(a => a.GetType() == typeof(Cat)).Count(); }
+            get { return tiere.Where(a => a.GetType() == typeof(Cat)).Count(); }
         }
 
         public int NumberOfDogs
         {
-            get { return tiere.Select(a => a.GetType() == typeof(Dog)).Count(); }
+            get { return tiere.Where(a => a.GetType() == typeof(Dog)).Count(); }
         }
         
     }
