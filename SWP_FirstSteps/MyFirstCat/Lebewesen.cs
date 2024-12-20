@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyFirstCat
 {
-    class Lebewesen
+    public class Lebewesen
     {
         public string Color { get; set; }
         public string Name { get; set; }

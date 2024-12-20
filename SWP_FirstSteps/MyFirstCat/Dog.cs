@@ -8,7 +8,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 // eine eltern klasse animal die eine interne variable name hat die klasse leitet von dem tier ab und erbt somit das Attribut Name
 namespace MyFirstCat
 {
-    class Dog : Animal
+    public class Dog : Animal
     {
         public Dog(DateTime birthDate, string color = "Nicht Verfügbar", string name = "nicht Verfügbar") : base(name, birthDate, color, 4, "Hund")
         {
