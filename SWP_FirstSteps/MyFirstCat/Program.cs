@@ -42,7 +42,7 @@ void tierConsole()
                         }
                         Console.WriteLine("Hier ist die Liste mit allen Tieren:");
                         myTier.ShowAnimals();
-                        Console.WriteLine("Was willst du nun anstellen? \n1.Katze hinzufügen\n2.Geräusch vom Tier ausgeben\n3.Anzahl der Katzen ausgeben\n4.Anzahl der Hunde ausgeben");
+                        Console.WriteLine("Was willst du nun anstellen? \n1.Katze hinzufügen\n2.Geräusch vom Tier ausgeben\n3.Anzahl der Katzen ausgeben\n4.Anzahl der Hunde ausgeben\n5.Anzahl Tiere ausgeben\n6.Durchschnittsalter aller Tiere im Tierheim ausgeben");
                         string inputEnd = Console.ReadLine();
                         if (int.TryParse(inputEnd, out int dtEnd))
                         {
@@ -59,6 +59,12 @@ void tierConsole()
                                     break;
                                 case 4:
                                     Console.WriteLine($"Es sind {myTier.NumberOfDogs} Katzen");
+                                    break;
+                                case 5:
+                                    Console.WriteLine($"Es sind {myTier.NumberOfAnimals} Tiere");
+                                    break;
+                                case 6:
+                                    Console.WriteLine($"Das Durchschnittsalter des Tierheimes beträgt {myTier.AvgAge}");
                                     break;
                             }
                         }

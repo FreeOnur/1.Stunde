@@ -30,6 +30,30 @@ namespace MyFirstCat
         {
             get { return tiere.Where(a => a.GetType() == typeof(Dog)).Count(); }
         }
+        public int NumberOfAnimals
+        {
+            get
+            {
+                return tiere.Count;
+            }
+        }
+
+
+        public float AvgAge
+        {
+            get
+            {
+                int age = 0;
+                foreach (var tier in tiere)
+                {
+                    age += tier.Age;
+                }
+                float durchschnittsAlter = age / NumberOfAnimals;
+                return durchschnittsAlter;
+
+            }
+        }
+
         
     }
 }
