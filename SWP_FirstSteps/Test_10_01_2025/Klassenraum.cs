@@ -6,14 +6,13 @@ using System.Threading.Tasks;
 
 namespace Test_10_01_2025
 {
-    class Klassenraum
+    public class Klassenraum
     {
         public float RaumInQm {  get; set; }
         public int Plaetze { get; set; }
         public bool HasCynap { get; set; }
 
         public List<Schueler> SchuelerImRaum = new List<Schueler>();
-
         public Klassenraum(float raumInQm, int plaetze, bool hasCynap)
         {
             RaumInQm = raumInQm;
