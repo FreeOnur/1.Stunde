@@ -51,6 +51,7 @@ namespace Test_10_01_2025
             }
         }
         public Schueler(string klasse, DateTime geburttasg, string geschlecht) : base(geburttasg, geschlecht)
+
         {
             Geburtstag = geburttasg;
             Klasse = klasse;
