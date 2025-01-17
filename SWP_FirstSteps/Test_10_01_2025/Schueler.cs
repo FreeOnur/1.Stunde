@@ -50,9 +50,9 @@ namespace Test_10_01_2025
                 Console.WriteLine($"Klasse {klasse}: {anzahl} Schüler");
             }
         }
-        public Schueler(string klasse, DateTime geburt, string geschlecht) : base(geburt, geschlecht)
+        public Schueler(string klasse, DateTime geburst, string geschlecht) : base(geburst, geschlecht)
         {
-            Geburtstag = geburt;
+            Geburtstag = geburst;
             Klasse = klasse;
             AddKlasse(klasse);
         }
